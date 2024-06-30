@@ -7,7 +7,11 @@ app.use(cors())
 app.use(express.json())
 app.use((req, res) => {
     console.log(req.body)
-    res.json({ done: true })
+    res.json({
+        headers:req.headers,
+        body: req.body,
+        method: req.method,
+    })
 })
 app.listen(9000, () => {
     console.log("Server running on port 9000")
