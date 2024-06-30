@@ -6,9 +6,14 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use((req, res) => {
-    console.log(req.body)
+    console.log({
+        headers: req.headers,
+        body: req.body,
+        method: req.method,
+    })
+    
     res.json({
-        headers:req.headers,
+        headers: req.headers,
         body: req.body,
         method: req.method,
     })
