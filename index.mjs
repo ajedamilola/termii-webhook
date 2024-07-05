@@ -4,7 +4,7 @@ import cors from "cors"
 const app = express()
 
 app.use(cors())
-app.use(express.json())
+app.use(express.bodyParser())
 app.use((req, res) => {
     console.log({
         headers: req.headers,
